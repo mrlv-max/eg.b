@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Hyperbola Construction - Focus-Directrix Method</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Interactive Hyperbola Construction</h1>
+            <p class="subtitle">Focus-Directrix Method with Step-by-Step Construction</p>
+        </header>
+
+        <div class="main-content">
+            <div class="canvas-section">
+                <div class="canvas-container">
+                    <canvas id="drawingCanvas" width="800" height="600"></canvas>
+                    <div class="reference-image">
+                        <img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/ae198c08e893a2ef9d3d8dc390205aa8/18322b3d-ab0a-4936-a9ff-6843a6cc38eb/46dd180c.png" alt="Complete Hyperbola Construction Reference" class="reference-img">
+                        <p class="reference-caption">Reference: Complete Construction</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-section">
+                <div class="card">
+                    <div class="card__header">
+                        <h3>Construction Steps</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="step-buttons">
+                            <button class="btn btn--primary btn--sm" id="step1">1. Show Directrix & Axis</button>
+                            <button class="btn btn--primary btn--sm" id="step2" disabled>2. Show Vertex & Focus</button>
+                            <button class="btn btn--primary btn--sm" id="step3" disabled>3. Calculate Eccentricity</button>
+                            <button class="btn btn--primary btn--sm" id="step4" disabled>4. Add Construction Points</button>
+                            <button class="btn btn--primary btn--sm" id="step5" disabled>5. Draw Hyperbola</button>
+                            <button class="btn btn--primary btn--sm" id="step6" disabled>6. Show Tangent & Normal</button>
+                            <button class="btn btn--outline btn--sm" id="resetBtn">Reset All</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card__header">
+                        <h3>Interactive Controls</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="control-group">
+                            <label class="form-label" for="pointDistance">Construction Point Distance (mm):</label>
+                            <input type="range" id="pointDistance" class="slider" min="20" max="100" value="50" step="5">
+                            <div class="slider-value">
+                                <span id="distanceValue">50</span> mm
+                            </div>
+                        </div>
+                        
+                        <div class="calculation-display" id="calculationDisplay">
+                            <p><strong>Radius:</strong> <span id="radiusCalc">R = (5/3) × 50 = 83.3 mm</span></p>
+                            <p><strong>Distance PF:</strong> <span id="pfDistance">83.3 mm</span></p>
+                            <p><strong>Distance PD:</strong> <span id="pdDistance">50.0 mm</span></p>
+                            <p><strong>Ratio PF/PD:</strong> <span id="ratio">1.67</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card__header">
+                        <h3>Construction Information</h3>
+                    </div>
+                    <div class="card__body">
+                        <div id="stepInfo" class="step-info">
+                            <h4>Getting Started</h4>
+                            <p>Click "Show Directrix & Axis" to begin the hyperbola construction. This method uses the focus-directrix definition where the ratio of distances from any point to the focus and directrix equals the eccentricity.</p>
+                            
+                            <div class="formula-box">
+                                <strong>Key Formula:</strong> e = PF/PD = 5/3 ≈ 1.667<br>
+                                <strong>Given:</strong> Vertex V at 15mm, Focus F at 40mm from directrix<br>
+                                <strong>Result:</strong> Since e > 1, this is a hyperbola
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card__header">
+                        <h3>Measurements</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="measurements">
+                            <div class="measurement-item">
+                                <label>Directrix Position:</label>
+                                <span>x = 0 mm</span>
+                            </div>
+                            <div class="measurement-item">
+                                <label>Vertex Distance:</label>
+                                <span>VD = 15 mm</span>
+                            </div>
+                            <div class="measurement-item">
+                                <label>Focus Distance:</label>
+                                <span>FD = 40 mm</span>
+                            </div>
+                            <div class="measurement-item">
+                                <label>Eccentricity:</label>
+                                <span>e = 5/3 ≈ 1.667</span>
+                            </div>
+                            <div class="measurement-item">
+                                <label>Scale Factor:</label>
+                                <span>1 mm = 2 pixels</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
